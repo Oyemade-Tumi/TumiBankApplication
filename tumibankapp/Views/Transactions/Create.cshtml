@@ -1,0 +1,88 @@
+﻿@model tumibankapp.Data.Transactions
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transactions</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SenderName" class="control-label"></label>
+                <input asp-for="SenderName" class="form-control" />
+                <span asp-validation-for="SenderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAccountNumber" class="control-label"></label>
+                <input asp-for="SenderAccountNumber" class="form-control" />
+                <span asp-validation-for="SenderAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecieverName" class="control-label"></label>
+                <input asp-for="RecieverName" class="form-control" />
+                <span asp-validation-for="RecieverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecieverAccountNumber" class="control-label"></label>
+                <input asp-for="RecieverAccountNumber" class="form-control" />
+                <span asp-validation-for="RecieverAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionDate" class="control-label"></label>
+                <input asp-for="TransactionDate" class="form-control" />
+                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentBalance" class="control-label"></label>
+                <input asp-for="CurrentBalance" class="form-control" />
+                <span asp-validation-for="CurrentBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreviousBalance" class="control-label"></label>
+                <input asp-for="PreviousBalance" class="form-control" />
+                <span asp-validation-for="PreviousBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionStatus" class="control-label"></label>
+                <input asp-for="TransactionStatus" class="form-control" />
+                <span asp-validation-for="TransactionStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsCoperate" /> @Html.DisplayNameFor(model => model.IsCoperate)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsExternalTransfer" /> @Html.DisplayNameFor(model => model.IsExternalTransfer)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="RefrenceNumber" class="control-label"></label>
+                <input asp-for="RefrenceNumber" class="form-control" />
+                <span asp-validation-for="RefrenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<tumibankapp.Data.Transactions>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Transactions</h1>
+
+<p>
+    <a asp-action="Create">Send Money</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderAccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecieverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecieverAccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCoperate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsExternalTransfer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefrenceNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderAccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecieverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecieverAccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCoperate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsExternalTransfer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefrenceNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TransactionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TransactionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TransactionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

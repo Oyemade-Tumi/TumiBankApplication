@@ -1,0 +1,41 @@
+﻿@model IEnumerable<tumibankapp.Data.OverDraft>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Over Draft</h1>
+
+<p>
+    <a asp-action="Create">Create New Over Draft</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Overdraftfee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeductOverdraftFee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Overdraftfee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeductOverdraftFee)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OverDraftId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OverDraftId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OverDraftId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

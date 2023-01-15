@@ -1,0 +1,48 @@
+﻿@model tumibankapp.Data.ExternalBanking
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ExternalBanking</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankAccountName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankAccountName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankAccountNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankAccountNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankSortCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankSortCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ExternalTransferId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
